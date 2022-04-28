@@ -3,10 +3,13 @@ import { useDispatch, useSelector } from "react-redux";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import AppBarTools from './components/AppBarTools/AppBarTools';
 import Index from "./views/Index";
-import Category from './components/Category';
-import Product from './components/Product';
+import Home from "./components/Home";
+
+import  Product from './components/Product';
 import Login from './components/Login-SignUp/Login';
 import SignUp from "./components/Login-SignUp/SignUp";
+import Category from "./components/Category";
+import Footer from "./components/Footer";
 
 function App() {
   return (
@@ -19,7 +22,10 @@ function App() {
         <Route exact path="/product" element={<Product/>} />
         <Route exact path="/login" element={<Login/>} />
         <Route exact path="/signup" element={<SignUp/>} />
+        <Route exact path="/home" element={<Home/>} />
       </Routes>
+    
+      <Footer/>
     </BrowserRouter>
   );
 }
