@@ -10,14 +10,14 @@ import FormControl from '@mui/material/FormControl';
 import NativeSelect from '@mui/material/NativeSelect';
 
 
-import { filterCategories, searchProducts, sortProducts } from '../actions/product';
+import { filterCategories, searchProducts, sortProducts } from '../../actions/product';
 import Paper from '@mui/material/Paper';
 import Stack from '@mui/material/Stack';
 import { styled } from '@mui/material/styles';
-import { categoriesSelector, filterCategoriesSelector } from '../selector/selectors';
+import { categoriesSelector, filterCategoriesSelector } from '../../selector/selectors';
 import { PaginationItem } from '@mui/material';
 
-const Category = () => {
+const ProductFilter = () => {
     const [value,setValue]=useState('');
     const [selects,setSelects] = useState([]);
     const [valueSort,setValueSort]=useState('');
@@ -65,14 +65,22 @@ const Category = () => {
 
     return (
         <>
-    
+            <TextField 
+              fullWidth 
+              label="Search" 
+              id="fullWidth" 
+              type='search'
+              value={value}
+              onChange={handleChange}
+              
+          />
            <Container maxWidth="sm">
                
             <Stack 
                 direction="row" 
-                spacing={3}
+                spacing={2}
                 marginTop='20px'
-                marginBottom={'20px'}
+                marginBottom={2}
                 >
                     
                         {listCategories.map((Category) => (
@@ -83,7 +91,7 @@ const Category = () => {
                             key={Category.id} 
                             onClick={handleClick} 
                             value={Category.id}
-                           
+                            
                             >
                                 {Category.name}</Button>
                             
@@ -96,10 +104,29 @@ const Category = () => {
                 
             </Container>
           
-                
+                <Box sx={{ minWidth: 100 }}  >
+                        <FormControl className='sort'  >
+                            <InputLabel variant="standard" htmlFor="uncontrolled-native">
+                            Sort By
+                            </InputLabel>
+                            <NativeSelect
+                            defaultValue={'none'}
+                            inputProps={{
+                                name: 'Sortby',
+                                id: 'uncontrolled-native',
+                            }}
+                            variant="standard"
+                            onChange={handleSort}
+                            >
+                            <option value={'name'}>name</option>
+                            <option value={'price'}>price</option>
+                            <option value={'none'}>none</option>
+                            </NativeSelect>
+                        </FormControl>
+                    </Box>
                     
         </>
     );
 }
 
-export default Category;
+export default ProductFilter;

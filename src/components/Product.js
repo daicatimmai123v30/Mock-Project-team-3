@@ -7,15 +7,19 @@ import {
   Button,
   Stack,
   Pagination,
-  CardMedia
+  CardMedia,
+  
 } from '@mui/material';
 
-import { useNavigate } from 'react-router-dom'
+import { useNavigate,Link } from 'react-router-dom'
 import {useSelector} from 'react-redux';
+import ProductDetail from './ProductDetail'; 
 
 
-import Category from './Category';
+import ProductFilter from './Filters/ProductFilter'; 
 import { productsListSelector } from '../selector/selectors';
+
+
 
 
 const Product = () => {
@@ -45,8 +49,13 @@ const Product = () => {
     <div className='list-products container-fluid'>
       <div className='products'>
         <div className='my-3'>
-          <Category></Category>
-          <Typography align='right' variant='subtitle1'>
+          <ProductFilter/>
+          <Typography 
+            align='right' 
+            variant='subtitle1' 
+            borderBottom={2}
+            marginBottom={5}
+            >
          
             
               
@@ -54,7 +63,7 @@ const Product = () => {
            Sản phẩm
           </Typography>
           
-          <div className='w-100 border border-dark my-1'></div>
+        
           
         </div>
         <div className='box-products'>
@@ -89,7 +98,7 @@ const Product = () => {
                 </Typography>
               </CardContent>
               <CardActions sx={{justifyContent:'space-around'}}>
-                <Button size='small'>Xem chi tiết</Button>
+                <Link to={`/detail?id=${value.id}`} > Xem chi tiết</Link>
                 <Button size='small' color='secondary' >Thêm Vào</Button>
               </CardActions>
             </Card>
