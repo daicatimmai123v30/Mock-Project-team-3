@@ -5,3 +5,8 @@ export const LOGIN_FAIL = "LOGIN_FAIL";
 export const LOGOUT = "LOGOUT";
 export const SET_MESSAGE = "SET_MESSAGE";
 export const CLEAR_MESSAGE = "CLEAR_MESSAGE";
+
+export const ADD_CART = "ADD_CART";
+export const REMOVE_CART = "REMOVE_CART"
+
+export const API_URL = "http://localhost:4444"
