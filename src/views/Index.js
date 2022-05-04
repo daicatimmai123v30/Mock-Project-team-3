@@ -5,9 +5,9 @@ import Home from '../components/Home/Home';
 function Index(props) {
     return (
         <>
-            <AppBarTools/>
+            
             <Home/>
-            <Footer/>
+        
         </>
     );
 }

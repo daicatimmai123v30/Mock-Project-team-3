@@ -4,8 +4,13 @@ import AppBarTools from './components/AppBarTools/AppBarTools';
 import Index from "./views/Index";
 import Category from './components/Category/Category';
 import ListProducts from './components/ListProducts/ListsProducts';
+import Home from "./components/Home";
+
 import Login from './components/Login-SignUp/Login';
 import SignUp from "./components/Login-SignUp/SignUp";
+import Category from "./components/Category";
+import Footer from "./components/Footer";
+import ProductDetail from "./components/ProductDetail";
 
 function App() {
   return (
@@ -18,7 +23,11 @@ function App() {
         <Route exact path="/Products" element={<ListProducts/>} />
         <Route exact path="/login" element={<Login/>} />
         <Route exact path="/signup" element={<SignUp/>} />
+        <Route exact path="/home" element={<Home/>} />
+        <Route exact path="/detail" element={<ProductDetail/>} />
       </Routes>
+    
+      <Footer/>
     </BrowserRouter>
   );
 }
