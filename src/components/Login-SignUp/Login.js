@@ -125,9 +125,7 @@ function Login(props) {
                 </Link>
               </Grid>
               <Grid item>
-                <Link to="/signup" variant="body2">
-                  SignUp
-                </Link>
+                <a href='/signup'>SignUp</a>
               </Grid>
             </Grid>
           </Box>

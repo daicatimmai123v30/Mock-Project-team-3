@@ -52,7 +52,6 @@ const ListsProducts = () => {
 
   return (
     <>
-      <AppBarTools/>
       <div className="list-products container-fluid">
         <div className="products">
           <div className="my-3">

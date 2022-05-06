@@ -4,18 +4,17 @@ import AppBarTools from './components/AppBarTools/AppBarTools';
 import Index from "./views/Index";
 import Category from './components/Category/Category';
 import ListProducts from './components/ListProducts/ListsProducts';
-import Home from "./components/Home";
+import Home from "./components/Home/Home";
 
 import Login from './components/Login-SignUp/Login';
 import SignUp from "./components/Login-SignUp/SignUp";
-import Category from "./components/Category";
-import Footer from "./components/Footer";
+import Footer from "./components/Footer/Footer";
 import ProductDetail from "./components/ProductDetail";
 
 function App() {
   return (
     <BrowserRouter>
-    {/* <AppBarTools/> */}
+    <AppBarTools/>
       <Routes>
         <Route exact path="/" element={<Index/>} />
         <Route exact path="/Index" element={<Index/>} />
