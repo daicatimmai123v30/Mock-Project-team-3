@@ -12,6 +12,7 @@ import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { signup } from "../../actions/auth";
 import * as Yup from 'yup';
+import Index from '../../views/Index';
 
 function SignUp(props) {
 
@@ -59,7 +60,8 @@ function SignUp(props) {
       }
     
       return (
-          <Container component="main" maxWidth="xs">
+        <Index>
+          <Container component="main" maxWidth="xs" sx={{ pb: 3 }}>
             <CssBaseline />
             <Box
               sx={{
@@ -86,7 +88,7 @@ function SignUp(props) {
                       name="fullname"
                       autoComplete="family-name"
                       {...register('fullname')}
-                    error={errors.fullname ? true : false}
+                      error={errors.fullname ? true : false}
                     />
                     <Typography variant="inherit" color="textSecondary">
                         {errors.fullname?.message}
@@ -101,7 +103,7 @@ function SignUp(props) {
                       name="username"
                       autoComplete="family-name"
                       {...register('username')}
-                error={errors.username ? true : false}
+                      error={errors.username ? true : false}
                     />
                     <Typography variant="inherit" color="textSecondary">
                 {errors.username?.message}
@@ -116,7 +118,7 @@ function SignUp(props) {
                       name="email"
                       autoComplete="email"
                       {...register('email')}
-                        error={errors.email ? true : false}
+                      error={errors.email ? true : false}
                     />
                     <Typography variant="inherit" color="textSecondary">
                         {errors.email?.message}
@@ -132,7 +134,7 @@ function SignUp(props) {
                       id="password"
                       autoComplete="new-password"
                       {...register('password')}
-                error={errors.password ? true : false}
+                      error={errors.password ? true : false}
                     />
                     <Typography variant="inherit" color="textSecondary">
                         {errors.password?.message}
@@ -175,6 +177,7 @@ function SignUp(props) {
               </Box>
             </Box>
           </Container>
+          </Index>
       );
 }
 

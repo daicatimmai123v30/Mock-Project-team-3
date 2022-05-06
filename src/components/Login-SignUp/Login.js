@@ -13,6 +13,9 @@ import { useForm } from 'react-hook-form';
 import { login } from "../../actions/auth";
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as Yup from 'yup';
+import classes from './css.module.css';
+import AppBarTools from '../AppBarTools/AppBarTools';
+import Index from '../../views/Index';
 
 function Login(props) {
     // const[email,setEmail] = useState('');
@@ -52,18 +55,18 @@ function Login(props) {
       };
 
       if (isLoggedIn) {
-        return <Navigate  to="/profile" />;
+        return <Navigate  to="/Home" />;
       }
   return (
-      <>
-      <Container component="main" maxWidth="xs" >
+      <Index>
+      <Container component="main" maxWidth="xs" sx={{ pb: 3 }}>
         <Box
           sx={{
             marginTop: 8,
             display: 'flex',
             flexDirection: 'column',
             alignItems: 'center',
-            border: 1,
+            border: 2,
             borderRadius: '16px',
             borderColor: 'secondary.main'
           }}
@@ -133,7 +136,8 @@ function Login(props) {
           </Box>
         </Box>
       </Container>
-      </>
+      </Index>
+
   );
 }
 

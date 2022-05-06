@@ -5,14 +5,9 @@ export const LOGIN_FAIL = "LOGIN_FAIL";
 export const LOGOUT = "LOGOUT";
 export const SET_MESSAGE = "SET_MESSAGE";
 export const CLEAR_MESSAGE = "CLEAR_MESSAGE";
-<<<<<<< HEAD
 export const SEARCH_PRODUCTS = "SEARCH_PRODUCTS";
 export const FILTER_CATEGORY = "FILTER_CATEGORY";
 export const SORT_PRODUCTS = "SORT_PRODUCTS";
-=======
-
 export const ADD_CART = "ADD_CART";
 export const REMOVE_CART = "REMOVE_CART"
-
 export const API_URL = "http://localhost:4444"
->>>>>>> DaiTL

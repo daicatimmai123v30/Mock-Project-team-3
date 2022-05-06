@@ -1,0 +1,9 @@
+.style {
+    marginTop: '8';
+    display: flex;
+    flexDirection: 'column';
+    alignItems: 'center';
+    border: 2;
+    borderRadius: '16px';
+    borderColor: 'secondary.main';
+}
