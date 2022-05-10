@@ -41,7 +41,7 @@ const AppBarTools = () => {
                 Category
               </Button>
             </Link>
-            <Link to={"/product"} style={{ textDecoration: 'none' }}>
+            <Link to={"/Products?pg=1"} style={{ textDecoration: 'none' }}>
               <Button
                 sx={{ my: 2, color: 'white', display: 'block' }}
               >
