@@ -74,6 +74,9 @@ function Login(props) {
           <Typography component="h" variant="h2" color="secondary">
             Login
           </Typography>
+          <Typography component="h" variant="h8" color="red">
+            {message}
+          </Typography>
           <Box component="form" noValidate sx={{ m: 1 }}>
             <TextField
               margin="normal"
