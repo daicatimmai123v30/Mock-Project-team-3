@@ -13,8 +13,7 @@ import { useForm } from 'react-hook-form';
 import { login } from "../../actions/auth";
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as Yup from 'yup';
-import classes from './css.module.css';
-import AppBarTools from '../AppBarTools/AppBarTools';
+
 import Index from '../../views/Index';
 
 function Login(props) {
@@ -71,10 +70,10 @@ function Login(props) {
             borderColor: 'secondary.main'
           }}
         >
-          <Typography component="h" variant="h2" color="secondary">
+          <Typography  variant="h2" color="secondary">
             Login
           </Typography>
-          <Typography component="h" variant="h8" color="red">
+          <Typography  variant="h8" color="red">
             {message}
           </Typography>
           <Box component="form" noValidate sx={{ m: 1 }}>
@@ -131,7 +130,7 @@ function Login(props) {
                 </Link>
               </Grid>
               <Grid item>
-                <a href='/signup'>SignUp</a>
+                <Link to='/signup'>SignUp</Link>
               </Grid>
             </Grid>
           </Box>

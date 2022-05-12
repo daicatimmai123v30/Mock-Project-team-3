@@ -6,7 +6,6 @@ import{
 const user = JSON.parse(localStorage.getItem('user'));
 const initialState = [];
 export default function (state = initialState, action){
-    console.log(user)
     const {type, payload} = action;
     switch (type) {
         case ADD_CART:{

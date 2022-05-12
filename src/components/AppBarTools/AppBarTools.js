@@ -11,10 +11,11 @@ import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
 import Container from '@mui/material/Container';
 import { logout } from "../../actions/auth";
 import Button from '@mui/material/Button';
-import { Link } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 
 const AppBarTools = () => {
   const { user: currentUser } = useSelector((state) => state.auth);
+  const [isLoggedOut,setIsLoggedOut] = useState(false);
   const dispatch = useDispatch();
   const logOut = () =>{
     dispatch(logout())
@@ -48,9 +49,16 @@ const AppBarTools = () => {
                 Product
               </Button>
               </Link>
+              <Link to={"/Brands"} style={{ textDecoration: 'none' }}>
+              <Button
+                sx={{ my: 2, color: 'white', display: 'block' }}
+              >
+                Brands
+              </Button>
+              </Link>
           </Box>
           <Box>
-            <Link to={currentUser ? "/home" : "/login"} style={{ textDecoration: 'none' }}>
+            <Link to={currentUser ? "/Profile" : "/login"} style={{ textDecoration: 'none' }}>
               <IconButton aria-label="User">
                 <PersonIcon  fontSize="large" sx={{ color: '#f3e5f5' }} />
               </IconButton>
@@ -62,9 +70,11 @@ const AppBarTools = () => {
                 <AddShoppingCartIcon  fontSize="large" sx={{ color: '#f3e5f5' }} />
               </IconButton>
             </Link>
+            <Link to={"/home"}>
               <IconButton aria-label="Your Cart" onClick={logOut}>
                 <LogoutIcon  fontSize="large" sx={{ color: '#f3e5f5' }} />
               </IconButton>
+            </Link>
               </>
               }
           </Box>

@@ -8,7 +8,6 @@ import {
 } from './types';
 import AuthService from '../services/auth.services';
 export const signup = (username, email, password) => (dispatch) =>{
-    console.log(username, email, password)
     return AuthService.register(username ,email ,password).then(
         (response) => {
             dispatch({

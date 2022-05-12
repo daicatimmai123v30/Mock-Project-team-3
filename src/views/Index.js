@@ -1,3 +1,4 @@
+import { Container } from '@mui/material';
 import React from 'react';
 import AppBarTools from '../components/AppBarTools/AppBarTools';
 import Footer from '../components/Footer/Footer';
@@ -6,9 +7,9 @@ function Index(props) {
     return (
         <>
             <AppBarTools/>
-            <div>
-            {props.children}
-            </div>
+                <Container>
+                    {props.children}
+                </Container>
             <Footer/>
         </>
     );

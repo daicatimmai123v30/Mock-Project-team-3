@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 import Button from '@mui/material/Button';
-import { useDispatch } from "react-redux";
+import { useDispatch,useSelector } from "react-redux";
 import CssBaseline from '@mui/material/CssBaseline';
 import TextField from '@mui/material/TextField';
 import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
-import { Link,Navigate } from 'react-router-dom';
+import { Navigate,Link } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { signup } from "../../actions/auth";
@@ -16,7 +16,8 @@ import Index from '../../views/Index';
 
 function SignUp(props) {
 
-    const [isSignUp,setIsSignUp] = useState(false)
+    const [isSignUp,setIsSignUp] = useState(false);
+    const { message } = useSelector(state => state.message);
     const dispatch = useDispatch();
 
     const validationSchema = Yup.object().shape({
@@ -76,6 +77,9 @@ function SignUp(props) {
             >
               <Typography variant="h2" color="secondary">
                 Sign up
+              </Typography>
+              <Typography  variant="h8" color="red">
+                {message}
               </Typography>
               <Box component="form" noValidate onSubmit={handleSubmit} sx={{ m: 1 }}>
                 <Grid container spacing={2}>
@@ -169,7 +173,7 @@ function SignUp(props) {
                 </Button>
                 <Grid container justifyContent="flex-end">
                   <Grid item>
-                    <a href="/login">Login</a>
+                    <Link to="/login">Login</Link>
                   </Grid>
                 </Grid>
               </Box>
