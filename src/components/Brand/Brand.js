@@ -1,4 +1,4 @@
-import React ,{ useEffect,useState} from 'react';
+import React ,{ useEffect,useState,useCallback} from 'react';
 import Index from '../../views/Index';
 import MenuBar from './MenuBar';
 import {Grid,Box} from '@mui/material';
@@ -37,13 +37,22 @@ function Brand(props) {
         }
     },[id])
 
-    const idBrand = (id) => {
+    const idBrand = useCallback((id) => {
         let idCv = Number(id);
         let index = data.findIndex(item => item.id == idCv);
+        (index>=0) &&
         setBrandCurrent({
             id:idCv,
             attributes:data[index].attributes})
-    }
+    },[data])
+    // const idBrand = (id) => {
+    //     let idCv = Number(id);
+    //     let index = data.findIndex(item => item.id == idCv);
+    //     (index>=0) &&
+    //     setBrandCurrent({
+    //         id:idCv,
+    //         attributes:data[index].attributes})
+    // }
     return (
         <Index>
             <Box sx={{m:5}}>

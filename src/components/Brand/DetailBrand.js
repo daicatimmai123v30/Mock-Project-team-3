@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState,memo } from 'react';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
@@ -44,4 +44,4 @@ function DetailBrand(props) {
     );
 }
 
-export default DetailBrand;
+export default memo(DetailBrand);

@@ -16,11 +16,13 @@ function Profile(props) {
     return (
         <Index>
             <Grid container spacing={1} sx={{m:5}}>
-                <Grid item xs={12} md={3} onChangePage={changePage}>
-                    <Menu/>
+                <Grid item xs={12} md={3} >
+                    <Menu onHandlerChangePage={changePage} />
                 </Grid>
                 <Grid item xs={12} md={9}>
                    {isProfile === 'PROFILE' && <ProfileDetai user = {user.user}/>}
+                   {/* {isProfile === 'HISTORYORDER' && console.log('HISTORYORDER')}
+                   {isProfile === 'Cart' && console.log('Cart')} */}
                 </Grid>
             </Grid>
         </Index>

@@ -8,13 +8,16 @@ import Container from '@mui/material/Container';
 
 function Menu(props) {
     const profile = () =>{
-        props.onChangePage('PROFILE')
+        console.log(1)
+        props.onHandlerChangePage('PROFILE')
     }
     const historyOrder = () =>{
-        props.onChangePage('HISTORYORDER')
+        console.log(1)
+        props.onHandlerChangePage('HISTORYORDER')
     }
     const cart = () =>{
-        props.onChangePage('Cart')
+        console.log(1)
+        props.onHandlerChangePage('Cart')
     }
     return (
         <>
